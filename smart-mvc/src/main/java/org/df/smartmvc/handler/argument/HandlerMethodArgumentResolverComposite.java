@@ -8,10 +8,7 @@ import org.springframework.core.convert.ConversionService;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 /**
  * @program: SmartMVC
@@ -49,6 +46,10 @@ public class HandlerMethodArgumentResolverComposite implements HandlerMethodArgu
     }
     public void addResolver(HandlerMethodArgumentResolver... resolvers) {
         Collections.addAll(this.argumentResolvers, resolvers);
+    }
+
+    public void addResolver(Collection<HandlerMethodArgumentResolver> resolvers) {
+        this.argumentResolvers.addAll(resolvers);
     }
 
     public void clear() {

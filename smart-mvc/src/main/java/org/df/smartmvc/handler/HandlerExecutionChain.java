@@ -96,7 +96,7 @@ public class HandlerExecutionChain {
      * @Param ex:
      * @return: void
     **/
-    private void triggerAfterCompletion(HttpServletRequest request, HttpServletResponse response, Exception ex) throws Exception{
+    public void triggerAfterCompletion(HttpServletRequest request, HttpServletResponse response, Exception ex) throws Exception{
         if (CollectionUtils.isEmpty(interceptors)){
             return;
         }
